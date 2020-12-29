@@ -124,12 +124,19 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client">
+      <Version>5.2.7</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.10" />
     <PackageReference Include="Xamarin.Forms" Version="4.7.0.1239" />
     <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.5.3.2" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.2.0.1422" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Prism_POC.Core\Prism_POC.Core.csproj">
+      <Project>{d6000e3b-2b6d-4c5d-9345-23707230b7ec}</Project>
+      <Name>Prism_POC.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Prism_POC\Prism_POC.csproj">
       <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
       <Name>Prism_POC</Name>

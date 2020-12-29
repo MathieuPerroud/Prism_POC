@@ -3,7 +3,7 @@ using Android.Content.PM;
 using Android.OS;
 using Prism;
 using Prism.Ioc;
-using Prism_POC.Core;
+using Prism_POC.Core.UseCases.Starships;
 
 namespace Prism_POC.Droid
 {
@@ -34,6 +34,7 @@ namespace Prism_POC.Droid
     {
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterSingleton<IGetAllStarships, GetAllStarshipsDroid>();
             // Register any platform specific implementations
         }
     }

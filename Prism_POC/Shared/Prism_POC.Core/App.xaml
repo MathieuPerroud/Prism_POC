@@ -2,10 +2,12 @@
 <prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:local="clr-namespace:Prism_POC.Core.Utils.Converters"
              x:Class="Prism_POC.App">
   <Application.Resources>
 
         <Color x:Key="NavigationButtonColor">DarkRed</Color>
+        <local:UnknownCostConverter x:Key="UnknownCostConverter"></local:UnknownCostConverter>
 
     </Application.Resources>
 </prism:PrismApplication>

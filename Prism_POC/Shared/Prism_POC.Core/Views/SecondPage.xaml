@@ -7,6 +7,36 @@
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <Label Text="{Binding Welcome}" 
                />
+        <CollectionView ItemsSource="{Binding Starships}"
+                        EmptyView="Pas de vaisseaux :("
+                        SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Vertical"
+                                 Margin="16">
+                        <StackLayout Orientation="Horizontal">
+                            <Label
+                               Text="Name : " 
+                               TextColor="Black"/>
+                            <Label
+                               Text="{Binding name}" 
+                               TextColor="Black"/>
+
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label
+                               Text="Cost : " 
+                               TextColor="Black"/>
+                            <Label
+                               TextColor="{Binding cost_in_credits, Mode=OneWay, Converter={StaticResource UnknownCostConverter}}"
+                               Text="{Binding cost_in_credits}" 
+                                />
+                        </StackLayout>
+
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </StackLayout>
 
 </ContentPage>

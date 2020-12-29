@@ -1,21 +1,27 @@
-﻿using Prism.Commands;
+﻿using MvvmHelpers.Commands;
+using Prism.Commands;
 using Prism.Navigation;
+using System;
+using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace Prism_POC.Core.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
-        public DelegateCommand NavigateToSecondPageCommand { get; private set; }
+        public AsyncCommand NavigateToSecondPageCommand { get; private set; }
         public string Welcome { get; set; } = "Bienvenue dans le POC Page Main";
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
             Title = "Main Page";
-            NavigateToSecondPageCommand = new DelegateCommand(NavigateToSecondPage);
+            
+            NavigateToSecondPageCommand = new AsyncCommand(NavigateToSecondPage, o => CanExecuteCommand(o), exception => Console.WriteLine(exception.Message));
         }
-        void NavigateToSecondPage()
+        async Task NavigateToSecondPage()
         {
-            NavigationService.NavigateAsync("SecondPage");
+            await NavigationService.NavigateAsync("SecondPage");
         }
+        bool CanExecuteCommand(object canExecute) => true;
     }
 }

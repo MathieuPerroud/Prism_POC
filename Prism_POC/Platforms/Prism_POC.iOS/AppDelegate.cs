@@ -1,6 +1,7 @@
 ﻿using Foundation;
 using Prism;
 using Prism.Ioc;
+using Prism_POC.Core.UseCases.Starships;
 using UIKit;
 
 
@@ -32,6 +33,7 @@ namespace Prism_POC.iOS
     {
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterSingleton<IGetAllStarships, GetAllStarshipsIOS>();
             // Register any platform specific implementations
         }
     }

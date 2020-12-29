@@ -99,6 +99,7 @@
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GetAllStarshipsIOS.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -203,6 +204,14 @@
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.2.0.1422" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Prism_POC.Core\Prism_POC.Core.csproj">
+      <Project>{d6000e3b-2b6d-4c5d-9345-23707230b7ec}</Project>
+      <Name>Prism_POC.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\Prism_POC.Model\Prism_POC.Model.csproj">
+      <Project>{b06b3877-7c45-4882-b81d-a2c8a82e2fdb}</Project>
+      <Name>Prism_POC.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Prism_POC\Prism_POC.csproj">
       <Project>{A682884C-CB44-4A89-B752-27BB634E0ABE}</Project>
       <Name>Prism_POC</Name>

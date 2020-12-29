@@ -5,6 +5,8 @@ using Prism_POC.Core.Views;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Forms;
+using Prism_POC.Core.Repositories.Starships;
+using Prism_POC.Core.UseCases.Starships;
 
 namespace Prism_POC
 {
@@ -25,6 +27,12 @@ namespace Prism_POC
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
+
+            containerRegistry.RegisterSingleton<IStarshipRepository, StarshipRepository>();
+
+
+            //containerRegistry.RegisterSingleton<IGetAllStarships, GetAllStarships>();
+
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();

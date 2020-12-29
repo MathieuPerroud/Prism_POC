@@ -11,6 +11,7 @@
             Margin="16"
             BackgroundColor="White" 
             Command="{Binding NavigateToSecondPageCommand}"
+            CommandParameter="SecondPage"
             Text="Navigate to Second Page"
             TextColor="{StaticResource NavigationButtonColor}" />
     </StackLayout>
